@@ -1,0 +1,20 @@
+<%- include ('header') -%>
+        <div class="col-10">
+          <form method = "POST">
+            <div class="form-group">
+              <label for="colorInput">Crystall color</label>
+              <input class="form-control" id="color" name="color">
+            </div>
+            <div class="form-group">
+              <label for="handlerInput">Handler type</label>
+              <input class="form-control" id="handler" name="handler">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="Check">
+              <label class="form-check-label" for="Check">I'm not a sith XD</label>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Add"/>
+            <a type="cancel" class="btn btn-danger" href="/saber">Cancel</a>
+          </form>
+        </div>
+<%- include ('footer') -%>

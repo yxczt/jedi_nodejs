@@ -1,0 +1,23 @@
+<%- include ('header') -%>
+        <div class="col-10">
+          <form method="POST">
+            <div class="form-group">
+              <label for="colorInput">Crystall color</label>
+              <input class="form-control" id="colorInput" name="color"
+               value="<%= saber.color %> ">
+            </div>
+            <div class="form-group">
+              <label for="handlerInput">Handler type</label>
+              <input class="form-control" id="handlerInput" name="handler"
+               value="<%= saber.handler %> ">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="Check"
+              name="check">
+              <label class="form-check-label" for="Check">I'm not a droid XD</label>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit changes">
+            <a type="cancel" class="btn btn-danger" href="/saber">Cancel</a>
+          </form>
+        </div>
+<%- include ('footer') -%>

@@ -1,0 +1,44 @@
+<%- include ('header') -%>
+        <div class="col-10">
+          <form method="POST">
+            <input type="hidden" name="id" value="<%= jedi._id %> ">
+            <div class="form-group">
+              <label for="nameInput">Name</label>
+              <input class="form-control" id="nameInput" name="name"
+               value="<%= jedi.name %> " >
+            </div>
+            <div class="form-group">
+              <label for="speciesInput">Species</label>
+              <input class="form-control" id="speciesInput" name="species"
+               value="<%= jedi.species %> ">
+            </div>
+            <div class="form-group">
+              <label for="genderInput">Gender</label>
+              <input class="form-control" id="genderInput" name="gender"
+               value="<%= jedi.gender %> ">
+            </div>
+            <div class="form-group">
+              <label for="saberInput">Lightsaber</label>
+              <select id="saberinput" class="form-control" name="saber">
+                <option selected><% allsaber.forEach(function(saber){ %>
+                  <% if (jedi._saber.toString() === saber._id.toString()) { %>
+                  <%= saber.color %>, <%= saber.handler %>
+                  <% } %>
+                <% }); %></option>
+                <% allsaber.forEach(function(saber){ %>
+                      <% if (jedi._saber.toString() !== saber._id.toString()) { %>
+                      <option><%= saber.color %>, <%= saber.handler %></option>
+                      <% } %>
+                <% }); %>
+              </select>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="Check"
+              name="check">
+              <label class="form-check-label" for="Check">I'm not a droid XD</label>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit changes">
+            <a type="cancel" class="btn btn-danger" href="/">Cancel</a>
+          </form>
+        </div>
+<%- include ('footer') -%>

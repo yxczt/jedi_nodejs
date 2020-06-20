@@ -1,0 +1,37 @@
+<%- include ('header') -%>
+        <div class="col-10">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Species</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Lightsaber</th>
+                <th scope="col">&nbsp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ul>
+                <% alljedi.forEach(function(jedi){ %>
+                  <tr>
+                    <th scope="row"><%= jedi.name %></th>
+                    <td><%= jedi.species %></td>
+                    <td><%= jedi.gender %></td>
+                  <td><% allsaber.forEach(function(saber){ %>
+                    <% if (jedi._saber.toString() === saber._id.toString()) { %>
+                    <%= saber.color %>, <%= saber.handler %>
+                    <% } %>
+                  <% }); %></td>
+                    <td>
+                      <a class="btn btn-small btn-primary" href="/jedi/edit/<%= jedi._id %>">Edit</a>
+                      <a class="btn btn-small btn-danger" href="/jedi/del/<%= jedi._id %>">Delete</a>
+                    </td>
+                  </tr>
+                <% }); %>
+              </ul>
+            </tbody>
+          </table>
+          <br/>
+          <a class="btn btn-block btn-info" href="/jedi/new">New Jedi</a>
+        </div>
+<%- include ('footer') -%>

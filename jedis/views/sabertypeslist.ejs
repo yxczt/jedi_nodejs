@@ -1,0 +1,29 @@
+<%- include ('header') -%>
+        <div class="col-10">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Crystall color</th>
+                <th scope="col">Handler type</th>
+                <th scope="col">&nbsp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ul>
+                <% allsaber.forEach(function(saber){ %>
+                  <tr>
+                    <td><%= saber.color %></td>
+                    <td><%= saber.handler %></td>
+                    <td>
+                      <a class="btn btn-small btn-primary" href="/saber/edit/<%= saber._id %>">Edit</a>
+                      <a class="btn btn-small btn-danger" href="/saber/del/<%= saber._id %>">Delete</a>
+                    </td>
+                  </tr>
+                <% }); %>
+              </ul>
+            </tbody>
+          </table>
+          <br/>
+          <a class="btn btn-block btn-info" href="/saber/new">New Lightsaber</a>
+        </div>
+<%- include ('footer') -%>
